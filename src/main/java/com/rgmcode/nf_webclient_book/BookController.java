@@ -17,5 +17,10 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
+    @GetMapping
+    Book[] getBookById(){
+        return bookService.getBookById();
+    }
+
 
 }

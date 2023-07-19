@@ -25,4 +25,18 @@ public class BookService {
     }
 
 
+    public Book[] getBookById() {
+        WebClient webClient = WebClient.create("https://my-json-server.typicode.com/Flooooooooooorian/");
+        Book[] response = Objects.requireNonNull(webClient
+                .get()
+                .uri("/BookApi/books")
+                .retrieve()
+                .toEntity(Book[].class)
+                .block()
+        ).getBody();
+
+        assert response != null;
+        return response;
+    }
+
 }
