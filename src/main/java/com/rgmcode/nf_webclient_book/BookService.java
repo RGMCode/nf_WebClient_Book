@@ -24,12 +24,11 @@ public class BookService {
         return response;
     }
 
-
     public Book[] getBookById() {
         WebClient webClient = WebClient.create("https://my-json-server.typicode.com/Flooooooooooorian/");
         Book[] response = Objects.requireNonNull(webClient
                 .get()
-                .uri("/BookApi/books")
+                .uri("/BookApi/books/978-3-8362-8745-6")
                 .retrieve()
                 .toEntity(Book[].class)
                 .block()

@@ -17,7 +17,7 @@ public class BookController {
         return bookService.getAllBooks();
     }
 
-    @GetMapping
+    @GetMapping("978-3-8362-8745-6")
     Book[] getBookById(){
         return bookService.getBookById();
     }
